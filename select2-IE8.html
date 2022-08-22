@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>select2-IE8</title>
+ 
+    <script type="text/javascript" src="./js/jquery-latest.min.js"></script>
+ 
+    <link rel="stylesheet" type="text/css" href="./4.0.2/dist/css/select2.min.css"/>
+    <script type="text/javascript" src="./4.0.2/dist/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="./4.0.2/dist/js/i18n/zh-CN.js"></script>
+</head>
+ 
+<body>
+ 
+<select class="js-example" id="test" name="state" style="width: 300px;">
+    <option value="0000"></option>
+    <option value="0001">选项1</option>
+    <option value="0002">选项2</option>
+    <option value="0003">选项3</option>
+    <option value="0004">选项31</option>
+    <option value="0005">选项32</option>
+</select>
+ 
+</body>
+ 
+<script type="text/javascript">
+    if(!Array.prototype.indexOf){
+        Array.prototype.indexOf = function(obj,start){
+            for(var i = (start || 0),j = this.length; i < j; i++){
+                if(this[i] === obj) { return i;}
+            }
+        }
+    }
+    $('.js-example').select2({
+        allowClear: true,
+        placeholder:'请输入',
+        language: 'zh-CN'
+    });
+ 
+</script>
+ 
+</html>
