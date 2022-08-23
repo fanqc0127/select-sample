@@ -26,19 +26,27 @@
 </body>
  
 <script type="text/javascript">
-    if(!Array.prototype.indexOf){
-        Array.prototype.indexOf = function(obj,start){
+    // if(!Array.prototype.indexOf){
+    //     Array.prototype.indexOf = function(obj,start){
+    //         for(var i = (start || 0),j = this.length; i < j; i++){
+    //             if(this[i] === obj) { return i;}
+    //         }
+    //     }
+    // }
+    $.extend(Array.prototype,{
+        indexOf: function(obj,start){
             for(var i = (start || 0),j = this.length; i < j; i++){
                 if(this[i] === obj) { return i;}
             }
         }
-    }
+    })
+
     $('.js-example').select2({
         allowClear: true,
         placeholder:'请输入',
         language: 'zh-CN'
     });
- 
+
 </script>
  
 </html>
